@@ -1,0 +1,34 @@
+#Data analyses and figure creation for the Change Blindness Experiment
+
+###Stacie Heiberg
+
+##Introduction
+
+This file was used to analyze data from my
+[Change Blindness](https://www.youtube.com/watch?v=k0lT596YOX0).
+All materials including consent, experimental tasks, and debriefing can
+be accessed following the previous link and following the links embedded
+within the video.
+
+These data represent observations from 46 participants who reported
+participating in existing conditions and emailed me their data.Two reported seeing a change that did not happen and two reported seeing a change before there was a change. All four were excluded from the data. 
+
+Two variables were included in the data, the condition, and if the participant saw a change. 
+
+##Preparing data for analysis
+
+First we need to read in the data.
+
+```{r}
+results<-read.csv("results.csv")
+```
+```
+
+##Primary Analysis
+
+In order to see if emotion effected if a participant was more or less likely to experience change blindness, I used a table and a chi-square test. 
+```{r}
+table(results$Condition,results$Change)
+chisq.test(results$Condition,results$Change)
+```
+The data has a p-value of .66. Emotion did not effect the frequency that change blindness occred in this experiment. 

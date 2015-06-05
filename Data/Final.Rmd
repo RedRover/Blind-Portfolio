@@ -1,0 +1,28 @@
+---
+title: "Final"
+author: "Red Rover"
+date: "Sunday, May 31, 2015"
+output: html_document
+---
+First, I input my data in Microsoft Excel, and saved the file as a .csv file.I then loaded the csv file.
+```{r}
+results<-read.csv("results.csv")
+
+```
+Here I check the structure of my results to make sure the results are what I wanted them to look like. 
+```{r}
+str(results)
+```
+I then make a table and run a Chi-squared test. The Chi-squared tests tells me my p-value, degrees of freedom, and my x squared
+```{r}
+table(results$Condition,results$Change)
+chisq.test(results$Condition,results$Change)
+```
+
+
+
+
+
+
+
+
